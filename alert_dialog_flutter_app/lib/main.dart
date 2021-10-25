@@ -31,6 +31,7 @@ class AlertState extends State {
 
   showAlert(BuildContext context) {
     showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
