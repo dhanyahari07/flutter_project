@@ -5,14 +5,15 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text(" Home page"),
-        ),
-
-      ),
-  theme: ThemeData(accentColor:Colors.pinkAccent,primaryColor: Colors.black ),
+    return  ChangeNotifierProvider(
+      create: (context) => EntryProvider(),
+      child: MaterialApp(
+          home: HomeScreen(),
+          theme: ThemeData(
+            accentColor: Colors.pinkAccent,
+            primaryColor: Colors.black,
+            textTheme: GoogleFonts.patrickHandScTextTheme(),
+          )),
     );
   }
 }
